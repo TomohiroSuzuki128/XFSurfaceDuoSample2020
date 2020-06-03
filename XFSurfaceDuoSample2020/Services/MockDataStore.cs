@@ -6,33 +6,33 @@ using XFSurfaceDuoSample2020.Models;
 
 namespace XFSurfaceDuoSample2020.Services
 {
-    public class MockDataStore : IDataStore<Item>
+    public class MockStationItemDataStore : IDataStore<StationItem>
     {
-        readonly List<Item> items;
+        readonly List<StationItem> items;
 
-        public MockDataStore()
+        public MockStationItemDataStore()
         {
-            items = new List<Item>()
+            items = new List<StationItem>()
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
+                new StationItem(0001.ToString(),"北千住"),
+                new StationItem(0002.ToString(),"南千住"),
+                new StationItem(0003.ToString(),"三ノ輪"),
+                new StationItem(0004.ToString(),"入谷"),
+                new StationItem(0004.ToString(),"上野"),
+                new StationItem(0006.ToString(),"仲御徒町"),
             };
         }
 
-        public async Task<bool> AddItemAsync(Item item)
+        public async Task<bool> AddItemAsync(StationItem item)
         {
             items.Add(item);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Item item)
+        public async Task<bool> UpdateItemAsync(StationItem item)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
+            var oldItem = items.Where((StationItem arg) => arg.ID == item.ID).FirstOrDefault();
             items.Remove(oldItem);
             items.Add(item);
 
@@ -41,20 +41,21 @@ namespace XFSurfaceDuoSample2020.Services
 
         public async Task<bool> DeleteItemAsync(string id)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
+            var oldItem = items.Where((StationItem arg) => arg.ID == id).FirstOrDefault();
             items.Remove(oldItem);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<Item> GetItemAsync(string id)
+        public async Task<StationItem> GetItemAsync(string id)
         {
-            return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
+            return await Task.FromResult(items.FirstOrDefault(s => s.ID == id));
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<StationItem>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
         }
+
     }
 }

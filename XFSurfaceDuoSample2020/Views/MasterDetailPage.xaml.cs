@@ -13,12 +13,12 @@ using XFSurfaceDuoSample2020.ViewModels;
 namespace XFSurfaceDuoSample2020
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MasterDetail
+    public partial class MasterDetailPage
     {
         bool IsSpanned => DualScreenInfo.Current.SpanMode != TwoPaneViewMode.SinglePane;
         DetailsPage detailsPagePushed;
 
-        public MasterDetail()
+        public MasterDetailPage()
         {
             InitializeComponent();
             masterPage.FindByName<CollectionView>("Stations").SelectionChanged += OnTitleSelected;
@@ -36,11 +36,11 @@ namespace XFSurfaceDuoSample2020
 
         void SetDetailBindingContext()
         {
-            var bindingContext = (masterPage.BindingContext as MasterViewModel).SelectedStationItem ?? 
+            var selectedStationItem = (masterPage.BindingContext as MasterViewModel).SelectedStationItem ?? 
                 ((masterPage.BindingContext as MasterViewModel)
                 .StationItems as IList<StationItem>)[0];
-            detailsPagePushed.BindingContext = bindingContext;
-            detailsPage.BindingContext = bindingContext;
+            detailsPagePushed.BindingContext = new DetailViewModel(selectedStationItem);
+            detailsPage.BindingContext = new DetailViewModel(selectedStationItem);
         }
 
         async void SetupViews()

@@ -14,7 +14,7 @@ namespace XFSurfaceDuoSample2020
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new MasterDetail();
+            MainPage = new NavigationPage(new MasterDetailPage());
         }
 
         protected override void OnStart()

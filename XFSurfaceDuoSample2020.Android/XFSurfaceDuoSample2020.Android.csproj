@@ -96,7 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XFSurfaceDuoSample2020\XFSurfaceDuoSample2020.csproj">
-      <Project>{3B355033-655D-44D4-9982-688550D50289}</Project>
+      <Project>{BA2E48E0-923A-443A-AAB1-98F4A2899CD4}</Project>
       <Name>XFSurfaceDuoSample2020</Name>
     </ProjectReference>
   </ItemGroup>
