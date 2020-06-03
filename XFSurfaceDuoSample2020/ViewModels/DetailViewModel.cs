@@ -4,13 +4,19 @@ using XFSurfaceDuoSample2020.Models;
 
 namespace XFSurfaceDuoSample2020.ViewModels
 {
-    public class ItemDetailViewModel : ViewModelBase
+    public class DetailViewModel : ViewModelBase
     {
-        public Item Item { get; set; }
-        public ItemDetailViewModel(Item item = null)
+        StationItem selectedStationItem;
+        public StationItem SelectedStationItem
         {
-            Title = item?.Text;
-            Item = item;
+            get { return selectedStationItem; }
+            set { SetProperty(ref selectedStationItem, value); }
         }
+
+        public DetailViewModel(StationItem selectedStationItem = null)
+        {
+            SelectedStationItem = selectedStationItem;
+        }
+
     }
 }
