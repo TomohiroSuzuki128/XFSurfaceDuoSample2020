@@ -19,8 +19,6 @@ namespace XFSurfaceDuoSample2020
         {
             InitializeComponent();
             BindingContext = viewModel = new MasterViewModel();
-
-            var obj = viewModel.StationItems[0].Name;
         }
     }
 }

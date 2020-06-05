@@ -7,7 +7,7 @@ namespace XFSurfaceDuoSample2020.Models
     public class StationItem
     {
 
-        public StationItem(string id, string name)
+        public StationItem(string id = "", string name = "")
         {
             ID = id;
             Name = name;
@@ -15,6 +15,10 @@ namespace XFSurfaceDuoSample2020.Models
 
         public string ID { get; set; }
         public string Name { get; set; }
+
+        public static StationItem Empty => new StationItem();
+
+        public override string ToString() => Name;
 
     }
 }

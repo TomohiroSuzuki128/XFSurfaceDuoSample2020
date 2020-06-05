@@ -30,7 +30,7 @@
         <Label FontSize="Title" FontAttributes="Bold" Text="Title:"></Label>
         <Label FontSize="Title" Grid.Row="1" FontAttributes="Bold" Text="Details:"></Label>
 
-        <Label Grid.Column="1" Text="{Binding Title}"  VerticalTextAlignment="Center"></Label>
-        <Label Grid.Column="1" Grid.Row="1" Text="{Binding Details}"  VerticalTextAlignment="Center"></Label>
+        <Label Grid.Column="1" Text="{Binding SelectedStationItem.ID}"  VerticalTextAlignment="Center"></Label>
+        <Label Grid.Column="1" Grid.Row="1" Text="{Binding Name}"  VerticalTextAlignment="Center"></Label>
     </Grid>
 </Grid>
