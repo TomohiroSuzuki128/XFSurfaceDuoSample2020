@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XFSurfaceDuoSample2020.ViewModels;
 
 namespace XFSurfaceDuoSample2020
 {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,35 +17,52 @@ namespace XFSurfaceDuoSample2020
     public partial class MasterDetailPage
     {
         bool IsSpanned => DualScreenInfo.Current.SpanMode != TwoPaneViewMode.SinglePane;
+
         DetailsPage detailsPagePushed;
+
+        MasterViewModel masterViewModel;
+        DetailsViewModel detailsViewModel;
 
         public MasterDetailPage()
         {
             InitializeComponent();
             masterPage.FindByName<CollectionView>("Stations").SelectionChanged += OnTitleSelected;
             detailsPagePushed = new DetailsPage();
+
+            masterViewModel = masterPage.BindingContext as MasterViewModel;
+
+            detailsViewModel = new DetailsViewModel();
+            detailsPagePushed.BindingContext = detailsViewModel;
+            detailsPage.BindingContext = detailsViewModel;
+
+            SetDetailBindingContext();
         }
 
         void OnTitleSelected(object sender, SelectionChangedEventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine($"OnTitleSelected !!");
+
             if (e.CurrentSelection == null || e.CurrentSelection.Count == 0)
                 return;
 
-            SetDetailBindingContext();
+            masterViewModel.ChangeSelectedStationItem(e.CurrentSelection[0] as StationItem);
             SetupViews();            
         }
 
-        void SetDetailBindingContext()
+        void SetDetailBindingContext([CallerMemberName] string memberName = "")
         {
-            var selectedStationItem = (masterPage.BindingContext as MasterViewModel).SelectedStationItem ?? 
-                ((masterPage.BindingContext as MasterViewModel)
-                .StationItems as IList<StationItem>)[0];
-            detailsPagePushed.BindingContext = new DetailViewModel(selectedStationItem);
-            detailsPage.BindingContext = new DetailViewModel(selectedStationItem);
+            System.Diagnostics.Debug.WriteLine($"CallerMemberName = {memberName}");
+            System.Diagnostics.Debug.WriteLine($"ChangeSelectedStationItem !!");
+
+            detailsViewModel.ChangeSelectedStationItem(masterViewModel.SelectedStationItem);
         }
 
-        async void SetupViews()
+        async void SetupViews([CallerMemberName] string memberName = "")
         {
+            System.Diagnostics.Debug.WriteLine($"CallerMemberName = {memberName}");
+            System.Diagnostics.Debug.WriteLine($"IsSpanned = {IsSpanned}");
+            System.Diagnostics.Debug.WriteLine($"IsLandscape = {DualScreenInfo.Current.IsLandscape}");
+
             if (IsSpanned && !DualScreenInfo.Current.IsLandscape)
                 SetDetailBindingContext();
 
@@ -53,18 +71,18 @@ namespace XFSurfaceDuoSample2020
 
             if (!IsSpanned)
             {
+                System.Diagnostics.Debug.WriteLine($"PushAsync !!");
                 if (!Navigation.NavigationStack.Contains(detailsPagePushed))
                 {
                     await Navigation.PushAsync(detailsPagePushed);
                 }
             }
-
         }
 
         protected override void OnAppearing()
         {
-            if (!IsSpanned)
-                (masterPage.BindingContext as MasterViewModel).SelectedStationItem = null;
+            //if (!IsSpanned)
+            //    (masterPage.BindingContext as MasterViewModel).SelectedStationItem = null;
 
             DualScreenInfo.Current.PropertyChanged += OnFormsWindowPropertyChanged;
         }
