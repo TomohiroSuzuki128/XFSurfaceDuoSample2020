@@ -17,6 +17,8 @@
                 x:Name="Stations"
                 ItemsSource="{Binding StationItems}"
                 SelectionMode="Single"
+                SelectedItem="{Binding SelectedStationItem, Mode=TwoWay}"
+                 SelectionChangedCommand="{Binding SelectStationCommand}"
                 >
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
