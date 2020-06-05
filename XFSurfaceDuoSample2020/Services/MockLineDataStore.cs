@@ -6,11 +6,11 @@ using XFSurfaceDuoSample2020.Models;
 
 namespace XFSurfaceDuoSample2020.Services
 {
-    public class MockLineItemDataStore : IDataStore<LineItem>
+    public class MockLineDataStore : ILineDataStore<LineItem>
     {
         readonly List<LineItem> items;
 
-        public MockLineItemDataStore()
+        public MockLineDataStore()
         {
             items = new List<LineItem>()
             {

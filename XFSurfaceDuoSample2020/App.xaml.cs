@@ -13,7 +13,7 @@ namespace XFSurfaceDuoSample2020
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            //DependencyService.Register<MockDataStore>();
             MainPage = new NavigationPage(new MasterDetailPage());
         }
 

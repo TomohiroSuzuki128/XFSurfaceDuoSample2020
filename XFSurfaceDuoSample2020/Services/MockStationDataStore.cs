@@ -6,20 +6,27 @@ using XFSurfaceDuoSample2020.Models;
 
 namespace XFSurfaceDuoSample2020.Services
 {
-    public class MockStationItemDataStore : IDataStore<StationItem>
+    public class MockStationDataStore : IStationDataStore<StationItem>
     {
         readonly List<StationItem> items;
 
-        public MockStationItemDataStore()
+        public MockStationDataStore()
         {
             items = new List<StationItem>()
             {
-                new StationItem(0001.ToString(),"北千住"),
-                new StationItem(0002.ToString(),"南千住"),
-                new StationItem(0003.ToString(),"三ノ輪"),
-                new StationItem(0004.ToString(),"入谷"),
-                new StationItem(0004.ToString(),"上野"),
-                new StationItem(0006.ToString(),"仲御徒町"),
+                new StationItem("A", "A01", "北出粉度"),
+                new StationItem("A", "A02", "新出粉度"),
+                new StationItem("A", "A03", "中央出粉度"),
+                new StationItem("A", "A04", "出粉度市"),
+                new StationItem("A", "A04", "南出粉度"),
+                new StationItem("A", "A06", "出粉度口"),
+
+                new StationItem("B", "B01", "北左笛洲"),
+                new StationItem("B", "B02", "新左笛洲"),
+                new StationItem("B", "B03", "中央左笛洲"),
+                new StationItem("B", "B04", "左笛洲市"),
+                new StationItem("B", "B04", "南左笛洲"),
+                new StationItem("B", "B06", "左笛洲口"),
             };
         }
 
@@ -52,9 +59,9 @@ namespace XFSurfaceDuoSample2020.Services
             return await Task.FromResult(items.FirstOrDefault(s => s.ID == id));
         }
 
-        public async Task<IEnumerable<StationItem>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<StationItem>> GetItemsAsync(string lineID, bool forceRefresh = false)
         {
-            return await Task.FromResult(items);
+            return await Task.FromResult(items.Where(x => lineID == x.LineID));
         }
 
     }

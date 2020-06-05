@@ -7,12 +7,14 @@ namespace XFSurfaceDuoSample2020.Models
     public class StationItem
     {
 
-        public StationItem(string id = "", string name = "")
+        public StationItem(string lineID = "", string id = "", string name = "")
         {
+            LineID = lineID;
             ID = id;
             Name = name;
         }
 
+        public string LineID { get; set; }
         public string ID { get; set; }
         public string Name { get; set; }
 
