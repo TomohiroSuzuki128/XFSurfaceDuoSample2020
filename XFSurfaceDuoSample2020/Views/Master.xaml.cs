@@ -13,12 +13,10 @@ namespace XFSurfaceDuoSample2020
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Master 
     {
-        MasterViewModel viewModel;
-
         public Master()
         {
             InitializeComponent();
-            BindingContext = viewModel = new MasterViewModel();
+            BindingContext = new MasterViewModel(new DetailsViewModel());
         }
     }
 }

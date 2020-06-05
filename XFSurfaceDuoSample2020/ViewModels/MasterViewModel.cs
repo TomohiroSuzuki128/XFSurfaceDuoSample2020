@@ -1,6 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
+using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using XFSurfaceDuoSample2020.Models;
 using XFSurfaceDuoSample2020.Services;
@@ -9,6 +11,9 @@ namespace XFSurfaceDuoSample2020.ViewModels
 {
     public class MasterViewModel : ViewModelBase
     {
+
+        public DetailsViewModel DetailsViewModel { get; private set; }
+
         public ObservableCollection<StationItem> StationItems { get; set; }
 
         MockStationItemDataStore mockStationItemDataStore = new MockStationItemDataStore();
@@ -20,9 +25,14 @@ namespace XFSurfaceDuoSample2020.ViewModels
             set { SetProperty(ref selectedStationItem, value); }
         }
 
-        public MasterViewModel()
+        public ICommand SelectStationCommand { private set; get; }
+
+        public Action SetupViewsAction { get; set; }
+
+        public MasterViewModel(DetailsViewModel detailsViewModel)
         {
             Initialize();
+            DetailsViewModel = detailsViewModel;
         }
 
         async void Initialize()
@@ -31,12 +41,21 @@ namespace XFSurfaceDuoSample2020.ViewModels
             StationItems = new ObservableCollection<StationItem>();
             (await mockStationItemDataStore.GetItemsAsync()).ForEach(x => StationItems.Add(x));
             SelectedStationItem = StationItem.Empty;
+
+            SelectStationCommand = new Command(() => OnTitleSelected());
         }
 
-        public void ChangeSelectedStationItem(StationItem selectedStationItem) =>
-             SelectedStationItem = selectedStationItem;
+        void ChangeSelectedStationItem(StationItem selectedStationItem) =>
+             SelectedStationItem = DetailsViewModel.SelectedStationItem = selectedStationItem;
 
-        public ICommand OpenWebCommand { get; }
+        void OnTitleSelected()
+        {
+            System.Diagnostics.Debug.WriteLine($"OnTitleSelected !!");
+
+            ChangeSelectedStationItem(SelectedStationItem);
+            SetupViewsAction?.Invoke();
+        }
+        
     }
 }
 
