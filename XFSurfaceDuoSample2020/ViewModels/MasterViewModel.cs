@@ -15,8 +15,17 @@ namespace XFSurfaceDuoSample2020.ViewModels
         public DetailsViewModel DetailsViewModel { get; private set; }
 
         public ObservableCollection<StationItem> StationItems { get; set; }
+        public ObservableCollection<LineItem> LineItems { get; set; }
 
+        MockLineItemDataStore mockLineItemDataStore = new MockLineItemDataStore();
         MockStationItemDataStore mockStationItemDataStore = new MockStationItemDataStore();
+
+        LineItem selectedLineItem;
+        public LineItem SelectedLineItem
+        {
+            get { return selectedLineItem; }
+            set { SetProperty(ref selectedLineItem, value); }
+        }
 
         StationItem selectedStationItem;
         public StationItem SelectedStationItem
@@ -25,6 +34,7 @@ namespace XFSurfaceDuoSample2020.ViewModels
             set { SetProperty(ref selectedStationItem, value); }
         }
 
+        public ICommand SelectLineCommand { private set; get; }
         public ICommand SelectStationCommand { private set; get; }
 
         public Action SetupViewsAction { get; set; }
@@ -38,6 +48,11 @@ namespace XFSurfaceDuoSample2020.ViewModels
         async void Initialize()
         {
             Title = "Master";
+
+            LineItems = new ObservableCollection<LineItem>();
+            (await mockLineItemDataStore.GetItemsAsync()).ForEach(x => LineItems.Add(x));
+            SelectedLineItem = LineItem.Empty;
+
             StationItems = new ObservableCollection<StationItem>();
             (await mockStationItemDataStore.GetItemsAsync()).ForEach(x => StationItems.Add(x));
             SelectedStationItem = StationItem.Empty;
