@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -17,14 +18,17 @@ namespace XFSurfaceDuoSample2020.ViewModels
         public ObservableCollection<StationItem> StationItems { get; set; }
         public ObservableCollection<LineItem> LineItems { get; set; }
 
-        MockLineDataStore mockLineItemDataStore = new MockLineDataStore();
-        MockStationDataStore mockStationItemDataStore = new MockStationDataStore();
+        ILineDataStore mockLineItemDataStore = new MockLineDataStore();
+        IStationDataStore mockStationItemDataStore = new MockStationDataStore();
 
         LineItem selectedLineItem;
         public LineItem SelectedLineItem
         {
             get { return selectedLineItem; }
-            set { SetProperty(ref selectedLineItem, value); }
+            set {
+                SetProperty(ref selectedLineItem, value);
+                SelectLineCommand?.Execute(null);
+            }
         }
 
         StationItem selectedStationItem;
@@ -57,21 +61,28 @@ namespace XFSurfaceDuoSample2020.ViewModels
             (await mockStationItemDataStore.GetItemsAsync(SelectedLineItem.ID)).ForEach(x => StationItems.Add(x));
             SelectedStationItem = StationItem.Empty;
 
-            SelectStationCommand = new Command(() => OnTitleSelected());
+            SelectLineCommand = new Command(async () => await OnLineSelected());
+            SelectStationCommand = new Command(() => OnStationSelected());
+        }
+
+        async Task OnLineSelected() =>
+            await ChangeStationList(SelectedLineItem);
+
+        void OnStationSelected()
+        {
+            ChangeSelectedStationItem(SelectedStationItem);
+            SetupViewsAction?.Invoke();
+        }
+
+        async Task ChangeStationList(LineItem selectedLineItem)
+        {
+            StationItems.Clear();
+            (await mockStationItemDataStore.GetItemsAsync(selectedLineItem.ID)).ForEach(x => StationItems.Add(x));
+            SelectedStationItem = StationItem.Empty;
         }
 
         void ChangeSelectedStationItem(StationItem selectedStationItem) =>
              SelectedStationItem = DetailsViewModel.SelectedStationItem = selectedStationItem;
 
-        void OnTitleSelected()
-        {
-            System.Diagnostics.Debug.WriteLine($"OnTitleSelected !!");
-
-            ChangeSelectedStationItem(SelectedStationItem);
-            SetupViewsAction?.Invoke();
-        }
-        
     }
 }
-
-

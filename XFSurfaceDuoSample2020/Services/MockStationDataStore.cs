@@ -6,7 +6,7 @@ using XFSurfaceDuoSample2020.Models;
 
 namespace XFSurfaceDuoSample2020.Services
 {
-    public class MockStationDataStore : IStationDataStore<StationItem>
+    public class MockStationDataStore : IStationDataStore
     {
         readonly List<StationItem> items;
 
@@ -14,12 +14,12 @@ namespace XFSurfaceDuoSample2020.Services
         {
             items = new List<StationItem>()
             {
-                new StationItem("A", "A01", "北出粉度"),
-                new StationItem("A", "A02", "新出粉度"),
-                new StationItem("A", "A03", "中央出粉度"),
-                new StationItem("A", "A04", "出粉度市"),
-                new StationItem("A", "A04", "南出粉度"),
-                new StationItem("A", "A06", "出粉度口"),
+                new StationItem("A", "A01", "北出高度"),
+                new StationItem("A", "A02", "新出高度"),
+                new StationItem("A", "A03", "中央出高度"),
+                new StationItem("A", "A04", "出高度市"),
+                new StationItem("A", "A04", "南出高度"),
+                new StationItem("A", "A06", "出高度口"),
 
                 new StationItem("B", "B01", "北左笛洲"),
                 new StationItem("B", "B02", "新左笛洲"),

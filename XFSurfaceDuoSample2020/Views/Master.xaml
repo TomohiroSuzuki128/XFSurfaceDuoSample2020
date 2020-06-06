@@ -4,17 +4,19 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:local="clr-namespace:XFSurfaceDuoSample2020.Controls"
     mc:Ignorable="d"
     x:Class="XFSurfaceDuoSample2020.Master"
     >
-    <local:PLPicker
-        Placeholder="路線を選択して下さい"
+    <Picker
+        Title="路線を選択して下さい"
+        Margin="10"
         HeightRequest="60"
+        HorizontalOptions="Fill"
+        VerticalOptions="Fill"
         ItemsSource="{Binding LineItems}"
         SelectedItem="{Binding SelectedLineItem, Mode=TwoWay}"
         >
-    </local:PLPicker>
+    </Picker>
     <CollectionView
         x:Name="Stations"
         ItemsSource="{Binding StationItems}"

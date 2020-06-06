@@ -6,7 +6,7 @@ using XFSurfaceDuoSample2020.Models;
 
 namespace XFSurfaceDuoSample2020.Services
 {
-    public class MockLineDataStore : ILineDataStore<LineItem>
+    public class MockLineDataStore : ILineDataStore
     {
         readonly List<LineItem> items;
 
@@ -14,9 +14,8 @@ namespace XFSurfaceDuoSample2020.Services
         {
             items = new List<LineItem>()
             {
-                new LineItem(0001.ToString(),"日比谷線"),
-                new LineItem(0002.ToString(),"東西線"),
-                new LineItem(0003.ToString(),"千代田線"),
+                new LineItem("A","出粉度線"),
+                new LineItem("B","左笛洲線"),
             };
         }
 

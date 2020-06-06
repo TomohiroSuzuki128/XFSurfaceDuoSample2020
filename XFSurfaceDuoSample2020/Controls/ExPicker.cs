@@ -1,9 +1,9 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace XFSurfaceDuoSample2020.Controls
+namespace XFSurfaceDuoSample2020
 {
-    public class PLPicker : Picker
+    public class ExPicker : Picker
     {
 
         public static readonly BindableProperty PlaceholderProperty = BindableProperty.Create(
