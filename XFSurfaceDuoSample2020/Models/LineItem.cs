@@ -4,21 +4,19 @@ using System.Text;
 
 namespace XFSurfaceDuoSample2020.Models
 {
-    public class StationItem
+    public class LineItem
     {
 
-        public StationItem(string lineID = "", string id = "", string name = "")
+        public LineItem(string id = "", string name = "")
         {
-            LineID = lineID;
             ID = id;
             Name = name;
         }
 
-        public string LineID { get; set; }
         public string ID { get; set; }
         public string Name { get; set; }
 
-        public static StationItem Empty => new StationItem();
+        public static LineItem Empty => new LineItem();
 
         public override string ToString() => Name;
 

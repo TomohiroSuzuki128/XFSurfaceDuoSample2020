@@ -12,7 +12,6 @@ namespace XFSurfaceDuoSample2020.ViewModels
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
 
         bool isBusy = false;
         public bool IsBusy
