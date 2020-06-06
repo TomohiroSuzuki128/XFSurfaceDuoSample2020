@@ -18,14 +18,14 @@ namespace XFSurfaceDuoSample2020.Services
                 new StationItem("A", "A02", "新出高度"),
                 new StationItem("A", "A03", "中央出高度"),
                 new StationItem("A", "A04", "出高度市"),
-                new StationItem("A", "A04", "南出高度"),
+                new StationItem("A", "A05", "南出高度"),
                 new StationItem("A", "A06", "出高度口"),
 
                 new StationItem("B", "B01", "北左笛洲"),
                 new StationItem("B", "B02", "新左笛洲"),
                 new StationItem("B", "B03", "中央左笛洲"),
                 new StationItem("B", "B04", "左笛洲市"),
-                new StationItem("B", "B04", "南左笛洲"),
+                new StationItem("B", "B05", "南左笛洲"),
                 new StationItem("B", "B06", "左笛洲口"),
             };
         }

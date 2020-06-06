@@ -12,7 +12,6 @@ namespace XFSurfaceDuoSample2020.ViewModels
 {
     public class MasterViewModel : ViewModelBase
     {
-
         public DetailsViewModel DetailsViewModel { get; private set; }
 
         public ObservableCollection<StationItem> StationItems { get; set; }
