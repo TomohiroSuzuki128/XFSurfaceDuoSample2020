@@ -17,14 +17,15 @@ namespace XFSurfaceDuoSample2020.ViewModels
         public ObservableCollection<StationItem> StationItems { get; set; }
         public ObservableCollection<LineItem> LineItems { get; set; }
 
-        ILineDataStore mockLineItemDataStore = new MockLineDataStore();
-        IStationDataStore mockStationItemDataStore = new MockStationDataStore();
+        ILineDataStore lineItemDataStore = new MockLineDataStore();
+        IStationDataStore stationItemDataStore = new MockStationDataStore();
 
         LineItem selectedLineItem;
         public LineItem SelectedLineItem
         {
             get { return selectedLineItem; }
-            set {
+            set
+            {
                 SetProperty(ref selectedLineItem, value);
                 SelectLineCommand?.Execute(null);
             }
@@ -53,11 +54,11 @@ namespace XFSurfaceDuoSample2020.ViewModels
             Title = "Master";
 
             LineItems = new ObservableCollection<LineItem>();
-            (await mockLineItemDataStore.GetItemsAsync()).ForEach(x => LineItems.Add(x));
+            (await lineItemDataStore.GetItemsAsync()).ForEach(x => LineItems.Add(x));
             SelectedLineItem = LineItem.Empty;
 
             StationItems = new ObservableCollection<StationItem>();
-            (await mockStationItemDataStore.GetItemsAsync(SelectedLineItem.ID)).ForEach(x => StationItems.Add(x));
+            (await stationItemDataStore.GetItemsAsync(SelectedLineItem.ID)).ForEach(x => StationItems.Add(x));
             SelectedStationItem = StationItem.Empty;
 
             SelectLineCommand = new Command(async () => await OnLineSelected());
@@ -76,7 +77,7 @@ namespace XFSurfaceDuoSample2020.ViewModels
         async Task ChangeStationList(LineItem selectedLineItem)
         {
             StationItems.Clear();
-            (await mockStationItemDataStore.GetItemsAsync(selectedLineItem.ID)).ForEach(x => StationItems.Add(x));
+            (await stationItemDataStore.GetItemsAsync(selectedLineItem.ID)).ForEach(x => StationItems.Add(x));
             SelectedStationItem = StationItem.Empty;
         }
 

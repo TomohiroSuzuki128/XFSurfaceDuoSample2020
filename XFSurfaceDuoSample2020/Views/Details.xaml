@@ -1,36 +1,79 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="XFSurfaceDuoSample2020.Details">
-
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="Auto"></ColumnDefinition>
-        <ColumnDefinition Width="*"></ColumnDefinition>
-    </Grid.ColumnDefinitions>
-
-    <Grid.RowDefinitions>
-        <RowDefinition Height="Auto"></RowDefinition>
-        <RowDefinition Height="*"></RowDefinition>
-    </Grid.RowDefinitions>
-    <Image Margin="16, 16, 0, 0" WidthRequest="100" HeightRequest="100" Source="ic_movie_black_24dp"></Image>
-
-    <Grid Grid.Column="1" VerticalOptions="Center">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
+             x:Class="XFSurfaceDuoSample2020.Details"
+             Margin="10, 0, 0, 0"
+             BackgroundColor="LightGray"
+             >
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label FontSize="Title" FontAttributes="Bold" Text="Title:"></Label>
-        <Label FontSize="Title" Grid.Row="1" FontAttributes="Bold" Text="Details:"></Label>
 
-        <Label Grid.Column="1" Text="{Binding SelectedStationItem.ID}"  VerticalTextAlignment="Center"></Label>
-        <Label Grid.Column="1" Grid.Row="1" Text="{Binding Name}"  VerticalTextAlignment="Center"></Label>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image
+            BackgroundColor="Yellow"
+            Margin="16, 16, 0, 0" WidthRequest="100" HeightRequest="100" Source="ic_movie_black_24dp"></Image>
+        <Grid Grid.Column="1" VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label
+                BackgroundColor="Green"
+                FontSize="Title" FontAttributes="Bold" Text="Title:"
+                >
+            </Label>
+            <Label
+                BackgroundColor="DeepPink"
+                FontSize="Title" Grid.Row="1" FontAttributes="Bold" Text="Details:"
+                >
+            </Label>
+            <Label
+                BackgroundColor="Coral"
+                Grid.Column="1"
+                Text="{Binding SelectedStationItem.ID}"
+                VerticalTextAlignment="Center"
+                >
+            </Label>
+            <Label
+                BackgroundColor="Aquamarine"
+                Grid.Column="1" Grid.Row="1"
+                Text="{Binding Name}"
+                VerticalTextAlignment="Center"
+                >
+            </Label>
+        </Grid>
     </Grid>
-</Grid>
+    <CollectionView
+        BackgroundColor="LightCoral"
+        x:Name="Stations"
+        ItemsSource="{Binding TimeTableItems}"
+        SelectionMode="None"
+        >
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid Padding="10,5,10,5">
+                    <Frame Visual="Material" BorderColor="LightGray">
+                        <StackLayout Padding="5">
+                            <Label FontSize="Title" Text="{Binding Name}">
+                            </Label>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</StackLayout>

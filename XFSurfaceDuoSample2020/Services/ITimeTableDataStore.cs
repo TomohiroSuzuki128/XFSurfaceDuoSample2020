@@ -12,5 +12,6 @@ namespace XFSurfaceDuoSample2020.Services
         Task<bool> DeleteItemAsync(string id);
         Task<TimeTableItem> GetItemAsync(string id);
         Task<IEnumerable<TimeTableItem>> GetItemsAsync(string StationID, bool forceRefresh = false);
+        Task<IEnumerable<TimeTableItem>> GetItemsEachHourAsync(string stationID, int hour, bool forceRefresh = false);
     }
 }

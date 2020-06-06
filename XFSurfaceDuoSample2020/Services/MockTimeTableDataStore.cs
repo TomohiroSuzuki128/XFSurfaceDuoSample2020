@@ -170,5 +170,10 @@ namespace XFSurfaceDuoSample2020.Services
             return await Task.FromResult(items.Where(x => stationID == x.StationID));
         }
 
+        public async Task<IEnumerable<TimeTableItem>> GetItemsEachHourAsync(string stationID, int hour, bool forceRefresh = false)
+        {
+            return await Task.FromResult(items.Where(x => stationID == x.StationID && hour == x.Hour).OrderBy(x => x.Minute));
+        }
+
     }
 }
