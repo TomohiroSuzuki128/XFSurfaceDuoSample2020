@@ -11,7 +11,7 @@ using XFSurfaceDuoSample2020.ViewModels;
 namespace XFSurfaceDuoSample2020
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Details : Grid
+    public partial class Details : StackLayout
     {
         public Details()
         {

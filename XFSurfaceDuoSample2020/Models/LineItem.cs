@@ -6,6 +6,8 @@ namespace XFSurfaceDuoSample2020.Models
 {
     public class LineItem
     {
+        public string ID { get; set; }
+        public string Name { get; set; }
 
         public LineItem(string id = "", string name = "")
         {
@@ -13,12 +15,8 @@ namespace XFSurfaceDuoSample2020.Models
             Name = name;
         }
 
-        public string ID { get; set; }
-        public string Name { get; set; }
-
-        public static LineItem Empty => new LineItem();
-
         public override string ToString() => Name;
 
+        public static LineItem Empty => new LineItem();
     }
 }
