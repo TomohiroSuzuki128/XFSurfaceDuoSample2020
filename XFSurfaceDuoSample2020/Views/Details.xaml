@@ -5,7 +5,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="XFSurfaceDuoSample2020.Details"
-             Margin="10, 0, 0, 0"
              BackgroundColor="LightGray"
              >
     <Grid>
@@ -57,23 +56,53 @@
             </Label>
         </Grid>
     </Grid>
-    <CollectionView
-        BackgroundColor="LightCoral"
-        x:Name="Stations"
-        ItemsSource="{Binding TimeTableItems}"
-        SelectionMode="None"
-        >
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <Grid Padding="10,5,10,5">
-                    <Frame Visual="Material" BorderColor="LightGray">
-                        <StackLayout Padding="5">
-                            <Label FontSize="Title" Text="{Binding Name}">
+    <StackLayout Padding="5">
+        <CollectionView
+            Margin="3"
+            BackgroundColor="LightGray"
+            x:Name="Stations"
+            ItemsSource="{Binding TimeTableRowItems}"
+            SelectionMode="None"
+            >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid
+                        BackgroundColor="GreenYellow"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Center"
+                        ColumnSpacing="2"
+                        Padding="2"
+                        >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="10*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                            <Label
+                                BackgroundColor="Aquamarine"
+                                Padding="8"
+                                Grid.Column="0" Grid.Row="0"
+                                Text="{Binding Hour}"
+                                FontSize="Large"
+                                HorizontalTextAlignment="Center" 
+                                VerticalTextAlignment="Center"
+                                >
                             </Label>
-                        </StackLayout>
-                    </Frame>
-                </Grid>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+                            <Label
+                                BackgroundColor="Beige"
+                                Padding="8"
+                                Grid.Column="1" Grid.Row="0"
+                                Text="{Binding RowText}"
+                                FontSize="Large"
+                                HorizontalTextAlignment="Start"
+                                VerticalTextAlignment="Center"
+                                >
+                            </Label>
+                        </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
 </StackLayout>
