@@ -32,6 +32,7 @@
         Title="路線を選択して下さい"
         Margin="10"
         HeightRequest="60"
+        FontSize="Large"
         HorizontalOptions="Fill"
         VerticalOptions="Fill"
         ItemsSource="{Binding LineItems}"
@@ -47,9 +48,13 @@
         >
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <Grid Padding="10,5,10,5">
+                <Grid
+                    Padding="5"
+                    >
                     <Frame Visual="Material" BorderColor="LightGray">
-                        <StackLayout Padding="5">
+                        <StackLayout
+                            Padding="0"
+                            >
                             <Label FontSize="Title" Text="{Binding Name}">
                             </Label>
                         </StackLayout>

@@ -6,57 +6,55 @@
              mc:Ignorable="d"
              x:Class="XFSurfaceDuoSample2020.Details"
              BackgroundColor="LightGray"
+             Spacing="0"
              >
-    <Grid>
+    <Grid
+        BackgroundColor="Firebrick"
+        Padding="8,8,8,0"
+        VerticalOptions="Center"
+        >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Image
-            BackgroundColor="Yellow"
-            Margin="16, 16, 0, 0" WidthRequest="100" HeightRequest="100" Source="ic_movie_black_24dp"></Image>
-        <Grid Grid.Column="1" VerticalOptions="Center">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Label
-                BackgroundColor="Green"
-                FontSize="Title" FontAttributes="Bold" Text="Title:"
-                >
-            </Label>
-            <Label
-                BackgroundColor="DeepPink"
-                FontSize="Title" Grid.Row="1" FontAttributes="Bold" Text="Details:"
-                >
-            </Label>
-            <Label
-                BackgroundColor="Coral"
-                Grid.Column="1"
-                Text="{Binding SelectedStationItem.ID}"
-                VerticalTextAlignment="Center"
-                >
-            </Label>
-            <Label
-                BackgroundColor="Aquamarine"
-                Grid.Column="1" Grid.Row="1"
-                Text="{Binding Name}"
-                VerticalTextAlignment="Center"
-                >
-            </Label>
-        </Grid>
+        <Label
+            BackgroundColor="Green"
+            HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+            FontSize="Title" Text="ナンバリング："
+            >
+        </Label>
+        <Label
+            BackgroundColor="DeepPink"
+            Grid.Row="1"
+            HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+            FontSize="Title" Text="駅名："
+            >
+        </Label>
+        <Label
+            BackgroundColor="Coral"
+            FontSize="Title"
+            Grid.Column="1"
+            Text="{Binding SelectedStationItem.ID}"
+            VerticalTextAlignment="Center"
+            >
+        </Label>
+        <Label
+            BackgroundColor="Aquamarine"
+            FontSize="Title"
+            Grid.Column="1" Grid.Row="1"
+            Text="{Binding Name}"
+            VerticalTextAlignment="Center"
+            >
+        </Label>
     </Grid>
-    <StackLayout Padding="5">
+    <StackLayout
+        BackgroundColor="DarkOrange"
+        Padding="5">
         <CollectionView
             Margin="3"
             BackgroundColor="LightGray"

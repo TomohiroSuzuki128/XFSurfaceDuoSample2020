@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -28,6 +29,8 @@ namespace XFSurfaceDuoSample2020
         {
             InitializeComponent();
 
+            NavigationPage.SetHasNavigationBar(this, IsSpanned);
+
             detailsPagePushed = new DetailsPage();
 
             masterViewModel = masterPage.BindingContext as MasterViewModel;
@@ -40,6 +43,12 @@ namespace XFSurfaceDuoSample2020
 
         async void SetupViews()
         {
+            System.Diagnostics.Debug.WriteLine($"SpanMode = {DualScreenInfo.Current.SpanMode}");
+
+            NavigationPage.SetHasNavigationBar(this, !IsSpanned);
+            NavigationPage.SetHasNavigationBar(detailsPagePushed, !IsSpanned);
+            NavigationPage.SetHasNavigationBar(detailsPage, !IsSpanned);
+
             if (!IsSpanned)
             {
                 if (!Navigation.NavigationStack.Contains(detailsPagePushed))
@@ -62,6 +71,8 @@ namespace XFSurfaceDuoSample2020
 
         void OnFormsWindowPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine($"PropertyName = {e.PropertyName}");
+
             if (e.PropertyName == nameof(DualScreenInfo.Current.SpanMode) ||
                 e.PropertyName == nameof(DualScreenInfo.Current.IsLandscape))
             {
