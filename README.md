@@ -1,6 +1,6 @@
-# XFSurfaceDuoSample
+# Surface Duo を先取り。Dual Screen 対応アプリを作ってみよう！
 　  
-現在、パブリックプレビューですが、すでに、Surface Duo のエミュレーターが公開されていますので、Xamarin.Forms で Surface Duo の Dual Screen を利用したサンプルアプリを動かしてみましょう。
+現在、パブリックプレビューですが、すでに、Surface Duo のエミュレーターが公開されていますので、Xamarin.Forms で Surface Duo の Dual Screen を利用したサンプルアプリを作って動かしてみましょう。
 　  
 　  
 サンプルアプリとして、駅の時刻表をイメージしたアプリを準備しました。左ペインで、路線と駅を選ぶと、右ペインに時刻が表示されます。
