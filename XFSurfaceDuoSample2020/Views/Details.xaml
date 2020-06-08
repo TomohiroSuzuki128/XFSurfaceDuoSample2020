@@ -9,7 +9,8 @@
              Spacing="0"
              >
     <Grid
-        BackgroundColor="Firebrick"
+        BackgroundColor="White"
+        RowSpacing="2" ColumnSpacing="2"
         Padding="8,8,8,0"
         VerticalOptions="Center"
         >
@@ -23,20 +24,20 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label
-            BackgroundColor="Green"
+            BackgroundColor="White"
             HorizontalTextAlignment="End" VerticalTextAlignment="Center"
-            FontSize="Title" Text="ナンバリング："
+            FontSize="Title" Text="ナンバリング ："
             >
         </Label>
         <Label
-            BackgroundColor="DeepPink"
+            BackgroundColor="White"
             Grid.Row="1"
             HorizontalTextAlignment="End" VerticalTextAlignment="Center"
-            FontSize="Title" Text="駅名："
+            FontSize="Title" Text="駅名 ："
             >
         </Label>
         <Label
-            BackgroundColor="Coral"
+            BackgroundColor="White"
             FontSize="Title"
             Grid.Column="1"
             Text="{Binding SelectedStationItem.ID}"
@@ -44,7 +45,7 @@
             >
         </Label>
         <Label
-            BackgroundColor="Aquamarine"
+            BackgroundColor="White"
             FontSize="Title"
             Grid.Column="1" Grid.Row="1"
             Text="{Binding Name}"
@@ -53,7 +54,7 @@
         </Label>
     </Grid>
     <StackLayout
-        BackgroundColor="DarkOrange"
+        BackgroundColor="White"
         Padding="5">
         <CollectionView
             Margin="3"
@@ -64,22 +65,25 @@
             >
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid
-                        BackgroundColor="GreenYellow"
-                        HorizontalOptions="Fill"
-                        VerticalOptions="Center"
-                        ColumnSpacing="2"
-                        Padding="2"
-                        >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="10*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
+                    <StackLayout
+                        BackgroundColor="LightGray"
+                        Padding="1">
+                        <Grid
+                            BackgroundColor="LightGray"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Center"
+                            ColumnSpacing="2"
+                            Padding="2,1,2,1"
+                            >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="10*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
                             <Label
-                                BackgroundColor="Aquamarine"
+                                BackgroundColor="LightSkyBlue"
                                 Padding="8"
                                 Grid.Column="0" Grid.Row="0"
                                 Text="{Binding Hour}"
@@ -99,6 +103,7 @@
                                 >
                             </Label>
                         </Grid>
+                    </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
