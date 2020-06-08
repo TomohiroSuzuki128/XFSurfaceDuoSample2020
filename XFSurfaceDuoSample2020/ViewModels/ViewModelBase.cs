@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-using Xamarin.Forms;
-
-using XFSurfaceDuoSample2020.Models;
-using XFSurfaceDuoSample2020.Services;
-
 namespace XFSurfaceDuoSample2020.ViewModels
 {
     public class ViewModelBase : INotifyPropertyChanged

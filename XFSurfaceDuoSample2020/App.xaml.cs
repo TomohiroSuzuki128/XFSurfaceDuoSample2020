@@ -2,7 +2,6 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XFSurfaceDuoSample2020.Services;
-using XFSurfaceDuoSample2020.Views;
 
 namespace XFSurfaceDuoSample2020
 {
