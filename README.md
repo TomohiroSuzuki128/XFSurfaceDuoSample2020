@@ -86,6 +86,8 @@ Dual Screen に対応するには、以下の対応を行うだけであり、�
   
 仕組みがわかりましたので、早速アプリを実行してみましょう。
 　  
+　  
 Dual Screen で表示させるためには以下の手順でアプリを*スパン*してください。
+　  
 　  
 [エミュレーターでアプリをスパンする](https://docs.microsoft.com/ja-jp/dual-screen/android/use-emulator?tabs=java%2Cwindows#span-your-app-in-the-emulator)
