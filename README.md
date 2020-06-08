@@ -2,6 +2,8 @@
 
 現在、パブリックプレビューですが、すでに、Surface Duo のエミュレーターが公開されていますので、Xamarin.Forms で Surface Duo の Dual Screen を利用したサンプルアプリを動かしてみましょう。
 
+
+
 # 準備 #
 
 ## SDK のインストール ##
@@ -11,6 +13,8 @@ API 29 の SDK をインストールします。
 ![](https://github.com/TomohiroSuzuki128/XFSurfaceDuoSample2020/blob/master/images/010.png?raw=true)
 
 ![](https://github.com/TomohiroSuzuki128/XFSurfaceDuoSample2020/blob/master/images/011.png?raw=true)
+
+
 
 ## Surface Duo エミュレーター のセットアップ ##
 
@@ -42,6 +46,8 @@ API 29 の SDK をインストールします。
 [https://docs.microsoft.com/ja-jp/dual-screen/android/use-emulator?tabs=csharp%2Cmac#xamarin-developers](https://docs.microsoft.com/ja-jp/dual-screen/android/use-emulator?tabs=csharp%2Cmac#xamarin-developers)
 
 
+
+
 # アプリの実行 #
 
 Surface Duo エミュレーターを起動します。
@@ -49,6 +55,8 @@ Surface Duo エミュレーターを起動します。
 Visual Studio でソリューションを開き、ビルドして、(実行中のデバイスの一覧で) <build> (Android 10.0 - API 29) を選択し、実行します。
 
 ![](https://github.com/TomohiroSuzuki128/XamiOSHandsOn01/blob/master/images/012.png?raw=true)
+
+
 
 
 # Dual Screen 対応アプリの仕組み #
@@ -62,12 +70,14 @@ Dual Screen 対応のするには、以下の対応を行うだけであり、�
 
 ### Single Screen 時の構成 ###
 
-![](https://github.com/TomohiroSuzuki128/XamiOSHandsOn01/blob/master/images/021.png?raw=true)
+![](https://github.com/TomohiroSuzuki128/XFSurfaceDuoSample2020/blob/master/images/021.png?raw=true)
 
 
 ### Dual Screen 時の構成 ###
 
-![](https://github.com/TomohiroSuzuki128/XamiOSHandsOn01/blob/master/images/020.png?raw=true)
+![](https://github.com/TomohiroSuzuki128/XFSurfaceDuoSample2020/blob/master/images/020.png?raw=true)
+
+
 
 
 # 早速アプリをビルドして実行してみましょう #
