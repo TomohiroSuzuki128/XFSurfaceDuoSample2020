@@ -2,8 +2,14 @@
 　  
 現在、パブリックプレビューですが、すでに、Surface Duo のエミュレーターが公開されていますので、Xamarin.Forms で Surface Duo の Dual Screen を利用したサンプルアプリを動かしてみましょう。
 　  
+　  
 サンプルアプリとして、駅の時刻表をイメージしたアプリを準備しました。左ペインで、路線と駅を選ぶと、右ペインに時刻が表示されます。
-このような、構成で Dual Screen は効果的です。
+このような構成で Dual Screen は非常に効果的です。
+　  
+　  
+アプリの構成をシンプルに理解するために、Prism などのフレームワークを使わず、素の Xamarin.Forms で構成しています。
+　  
+　  
 なお、路線名、駅名、時刻は実在しないダミーです。
 　  
 ![](https://github.com/TomohiroSuzuki128/XFSurfaceDuoSample2020/blob/master/images/001.png?raw=true)
@@ -21,7 +27,6 @@ API 29 の SDK をインストールします。
 　  
 　  
 ## Surface Duo エミュレーター のセットアップ ##
-　  
 以下の手順で、Surface Duo のエミュレーターをダウンロード、インストールします。
 　  
 ### Windows ###
@@ -35,7 +40,6 @@ API 29 の SDK をインストールします。
 　  
 　  
 ## Surface Duo エミュレーター の起動スクリプトの確認 ##
-  
 以下の手順で、Surface Duo エミュレーターの起動スクリプトの設定を確認します。
 （Android SDK のインストールパスがデフォルトの場合、変更の必要はありません。）
 　  
@@ -82,7 +86,6 @@ Dual Screen に対応するには、以下の対応を行うだけであり、�
   
 仕組みがわかりましたので、早速アプリを実行してみましょう。
 　  
-　  
 Dual Screen で表示させるためには以下の手順でアプリを*スパン*してください。
-
+　  
 [エミュレーターでアプリをスパンする](https://docs.microsoft.com/ja-jp/dual-screen/android/use-emulator?tabs=java%2Cwindows#span-your-app-in-the-emulator)
