@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XFSurfaceDuoSample2020.Details"
+             BackgroundColor="LightGray"
+             Spacing="0"
+             >
+    <Grid
+        BackgroundColor="White"
+        RowSpacing="2" ColumnSpacing="2"
+        Padding="8,8,8,0"
+        VerticalOptions="Center"
+        >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label
+            BackgroundColor="White"
+            HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+            FontSize="Title" Text="ナンバリング ："
+            >
+        </Label>
+        <Label
+            BackgroundColor="White"
+            Grid.Row="1"
+            HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+            FontSize="Title" Text="駅名 ："
+            >
+        </Label>
+        <Label
+            BackgroundColor="White"
+            FontSize="Title"
+            Grid.Column="1"
+            Text="{Binding SelectedStationItem.ID}"
+            VerticalTextAlignment="Center"
+            >
+        </Label>
+        <Label
+            BackgroundColor="White"
+            FontSize="Title"
+            Grid.Column="1" Grid.Row="1"
+            Text="{Binding Name}"
+            VerticalTextAlignment="Center"
+            >
+        </Label>
+    </Grid>
+    <StackLayout
+        BackgroundColor="White"
+        Padding="5">
+        <CollectionView
+            Margin="3"
+            BackgroundColor="LightGray"
+            x:Name="Stations"
+            ItemsSource="{Binding TimeTableRowItems}"
+            SelectionMode="None"
+            >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout
+                        BackgroundColor="LightGray"
+                        Padding="1">
+                        <Grid
+                            BackgroundColor="LightGray"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Center"
+                            ColumnSpacing="2"
+                            Padding="2,1,2,1"
+                            >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="10*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label
+                                BackgroundColor="LightSkyBlue"
+                                Padding="8"
+                                Grid.Column="0" Grid.Row="0"
+                                Text="{Binding Hour}"
+                                FontSize="Large"
+                                HorizontalTextAlignment="Center" 
+                                VerticalTextAlignment="Center"
+                                >
+                            </Label>
+                            <Label
+                                BackgroundColor="Beige"
+                                Padding="8"
+                                Grid.Column="1" Grid.Row="0"
+                                Text="{Binding RowText}"
+                                FontSize="Large"
+                                HorizontalTextAlignment="Start"
+                                VerticalTextAlignment="Center"
+                                >
+                            </Label>
+                        </Grid>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</StackLayout>
