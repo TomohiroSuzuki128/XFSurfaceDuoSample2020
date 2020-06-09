@@ -82,9 +82,72 @@ Dual Screen に対応するには、以下の対応を行うだけであり、�
 ![](https://github.com/TomohiroSuzuki128/XFSurfaceDuoSample2020/blob/master/images/020.png?raw=true)
 　  
 　  
+# サンプルアプリを作ってみましょう #
+  
+仕組みがわかりましたので、早速サンプルアプリを作ってみましょう。
+　  
+start/XFSurfaceDuoSample2020.sln を Visual Studio で開いて下さい。
+　  
+　  
+## Single Screen 専用の 詳細画面を作成 ##
+　  
+start/XFSurfaceDuoSample2020/Views/DetailsPage.xaml を編集します。
+下記の通り、ガワの XAML にコンテンツ本体を参照させるコードを追加して下さい。
+　  
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:XFSurfaceDuoSample2020"
+             mc:Ignorable="d"
+             x:Class="XFSurfaceDuoSample2020.DetailsPage"
+             Title="Master Details"
+             Padding="10,0,0,0"
+             >
+    <!-- 以下のコードを追加 -->
+    <local:Details></local:Details>
+    <!-- ここまで -->
+</ContentPage>
+```
+　  
+　  
+##  Single Screen, Dual Screen 共用の画面を作成 ##
+　  
+start/XFSurfaceDuoSample2020/Views/MasterDetailPage.xaml を編集します。
+下記の通り、ガワの XAML にコンテンツ本体を参照させるコードを追加して下さい。
+　  
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen"
+            xmlns:local="clr-namespace:XFSurfaceDuoSample2020"
+            mc:Ignorable="d"
+            x:Class="XFSurfaceDuoSample2020.MasterDetailPage">
+    <!-- 以下のコードを追加 -->
+    <dualScreen:TwoPaneView MinWideModeWidth="4000" MinTallModeHeight="4000">
+        <dualScreen:TwoPaneView.Pane1>
+            <local:Master x:Name="masterPage"></local:Master>
+        </dualScreen:TwoPaneView.Pane1>
+        <dualScreen:TwoPaneView.Pane2>
+            <local:Details x:Name="detailsPage"></local:Details>
+        </dualScreen:TwoPaneView.Pane2>
+    </dualScreen:TwoPaneView>
+    <!-- ここまで -->
+</ContentPage>
+```
+　  
+これで、アプリのコードは完成です。
+　  
+　  
 # 早速アプリをビルドして実行してみましょう #
   
-仕組みがわかりましたので、早速アプリを実行してみましょう。
+では、早速アプリを実行してみましょう。
 　  
 　  
 Dual Screen で表示させるためには以下の手順でアプリを*スパン*してください。
