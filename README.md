@@ -51,7 +51,7 @@ API 29 の SDK をインストールします。
 　  
 ### Mac ###
   
-[https://docs.microsoft.com/ja-jp/dual-screen/xamarin/use-emulator?tabs=mac&WT.mc_id=DT-MVP-5002467](https://docs.microsoft.com/ja-jp/dual-screen/xamarin/use-emulator?tabs=mac&WT.mc_id=DT-MVP-5002467)
+[https://docs.microsoft.com/ja-jp/dual-screen/xamarin/use-emulator?tabs=mac&WT.mc_id=DT-MVP-5002467#update-the-pointer-to-your-android-sdk](https://docs.microsoft.com/ja-jp/dual-screen/xamarin/use-emulator?tabs=mac&WT.mc_id=DT-MVP-5002467#update-the-pointer-to-your-android-sdk)
 　  
 　  
 # アプリの実行 #
