@@ -31,12 +31,12 @@ API 29 の SDK をインストールします。
 　  
 ### Windows ###
   
-[https://docs.microsoft.com/ja-jp/dual-screen/android/get-duo-sdk?tabs=windows#download-and-install-the-surface-duo-sdk](https://docs.microsoft.com/ja-jp/dual-screen/android/get-duo-sdk?tabs=windows#download-and-install-the-surface-duo-sdk)
+[https://docs.microsoft.com/ja-jp/dual-screen/android/get-duo-sdk?tabs=windows&WT.mc_id=DT-MVP-5002467#download-and-install-the-surface-duo-sdk](https://docs.microsoft.com/ja-jp/dual-screen/android/get-duo-sdk?tabs=windows#&WT.mc_id=DT-MVP-5002467download-and-install-the-surface-duo-sdk)
 　  
 　  
 ### Mac ###
   
-[https://docs.microsoft.com/ja-jp/dual-screen/android/get-duo-sdk?tabs=mac#download-and-install-the-surface-duo-sdk](https://docs.microsoft.com/ja-jp/dual-screen/android/get-duo-sdk?tabs=mac#download-and-install-the-surface-duo-sdk)
+[https://docs.microsoft.com/ja-jp/dual-screen/android/get-duo-sdk?tabs=mac&WT.mc_id=DT-MVP-5002467#download-and-install-the-surface-duo-sdk](https://docs.microsoft.com/ja-jp/dual-screen/android/get-duo-sdk?tabs=mac&WT.mc_id=DT-MVP-5002467#download-and-install-the-surface-duo-sdk)
 　  
 　  
 ## Surface Duo エミュレーター の起動スクリプトの確認 ##
@@ -46,12 +46,12 @@ API 29 の SDK をインストールします。
 　  
 ### Windows ###
   
-[https://docs.microsoft.com/ja-jp/dual-screen/android/use-emulator?tabs=csharp%2Cwindows#xamarin-developers](https://docs.microsoft.com/ja-jp/dual-screen/android/use-emulator?tabs=csharp%2Cwindows#xamarin-developers)
+[https://docs.microsoft.com/ja-jp/dual-screen/xamarin/use-emulator?tabs=windows&WT.mc_id=DT-MVP-5002467#update-the-pointer-to-your-android-sdk](https://docs.microsoft.com/ja-jp/dual-screen/xamarin/use-emulator?tabs=windows&WT.mc_id=DT-MVP-5002467#update-the-pointer-to-your-android-sdk)
 　  
 　  
 ### Mac ###
   
-[https://docs.microsoft.com/ja-jp/dual-screen/android/use-emulator?tabs=csharp%2Cmac#xamarin-developers](https://docs.microsoft.com/ja-jp/dual-screen/android/use-emulator?tabs=csharp%2Cmac#xamarin-developers)
+[https://docs.microsoft.com/ja-jp/dual-screen/xamarin/use-emulator?tabs=mac&WT.mc_id=DT-MVP-5002467](https://docs.microsoft.com/ja-jp/dual-screen/xamarin/use-emulator?tabs=mac&WT.mc_id=DT-MVP-5002467)
 　  
 　  
 # アプリの実行 #
@@ -153,4 +153,4 @@ start/XFSurfaceDuoSample2020/Views/MasterDetailPage.xaml を編集します。
 Dual Screen で表示させるためには以下の手順でアプリを*スパン*してください。
 　  
 　  
-[エミュレーターでアプリをスパンする](https://docs.microsoft.com/ja-jp/dual-screen/android/use-emulator?tabs=java%2Cwindows#span-your-app-in-the-emulator)
+[エミュレーターでアプリをスパンする](https://docs.microsoft.com/ja-jp/dual-screen/android/use-emulator?tabs=java%2Cwindows&WT.mc_id=DT-MVP-5002467#span-your-app-in-the-emulator)
