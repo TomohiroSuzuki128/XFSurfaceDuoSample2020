@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFSurfaceDuoSample2020.Android", "XFSurfaceDuoSample2020\XFSurfaceDuoSample2020.Android\XFSurfaceDuoSample2020.Android.csproj", "{674D84E6-EDCB-4B98-9730-18F8C6DF51D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFSurfaceDuoSample2020", "XFSurfaceDuoSample2020\XFSurfaceDuoSample2020\XFSurfaceDuoSample2020.csproj", "{EAA4AA1C-EEB7-42F2-84C9-1EAD2CAE65AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{674D84E6-EDCB-4B98-9730-18F8C6DF51D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{674D84E6-EDCB-4B98-9730-18F8C6DF51D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{674D84E6-EDCB-4B98-9730-18F8C6DF51D5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{674D84E6-EDCB-4B98-9730-18F8C6DF51D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{674D84E6-EDCB-4B98-9730-18F8C6DF51D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{674D84E6-EDCB-4B98-9730-18F8C6DF51D5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{EAA4AA1C-EEB7-42F2-84C9-1EAD2CAE65AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAA4AA1C-EEB7-42F2-84C9-1EAD2CAE65AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAA4AA1C-EEB7-42F2-84C9-1EAD2CAE65AE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EAA4AA1C-EEB7-42F2-84C9-1EAD2CAE65AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAA4AA1C-EEB7-42F2-84C9-1EAD2CAE65AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAA4AA1C-EEB7-42F2-84C9-1EAD2CAE65AE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0008923C-F002-44B3-BB2F-D2ED86AD739E}
+	EndGlobalSection
+EndGlobal
