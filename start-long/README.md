@@ -92,18 +92,21 @@ start/XFSurfaceDuoSample2020.sln を Visual Studio または Visual Studio for M
 ## ① Dual Screen アプリの初期化 ##
 　  
 詳しい手順は下記をご覧ください。
+
 https://hiro128.hatenablog.jp/entry/2020/10/13/233412
 　  
 　  
 ## ② Single Screen, Dual Screen それぞれの画面を作成し、レイアウトが変更されるようにする ##
 　  
 詳しい手順は下記をご覧ください。
+
 https://hiro128.hatenablog.jp/entry/2020/10/18/215631
 　  
 　  
 ## ③ ViewModel と Service を紐づけてアプリを完成させます ##
 　  
 詳しい手順は下記をご覧ください。
+
 https://hiro128.hatenablog.jp/entry/2020/10/25/142451
 　  
 　  
