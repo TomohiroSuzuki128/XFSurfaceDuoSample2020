@@ -110,6 +110,8 @@ https://hiro128.hatenablog.jp/entry/2020/10/18/215631
 https://hiro128.hatenablog.jp/entry/2020/10/25/142451
 　  
 　  
+　  
+　  
 これで、アプリのコードは完成です。
 　  
 　  
